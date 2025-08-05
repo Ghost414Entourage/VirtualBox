@@ -1,0 +1,189 @@
+sudo apt update
+sudo apt install build-essential linux-headers-$(uname -r)
+
+
+
+
+Debian/Ubuntu
+
+sudo apt update
+sudo apt install build-essential linux-headers-$(uname -r)
+
+Fedora/CentOS/RHEL
+
+sudo dnf update -y
+sudo dnf groupinstall "Development Tools" -y
+sudo dnf install kernel-devel-$(uname -r)
+
+openSUSE
+
+sudo zypper refresh
+sudo zypper install kernel-default-devel
+
+
+
+
+
+
+
+
+
+Debian/Ubuntu/Mint
+
+sudo apt update
+sudo apt install virtualbox
+sudo apt install build-essential linux-headers-$(uname -r)
+
+Fedora/CentOS/RHEL
+
+sudo dnf update -y
+sudo dnf install VirtualBox
+sudo dnf groupinstall "Development Tools" -y
+sudo dnf install kernel-devel-$(uname -r)
+
+openSUSE
+
+sudo zypper refresh
+sudo zypper install virtualbox
+sudo zypper install kernel-default-devel
+
+
+
+
+
+
+
+
+
+Debian/Ubuntu (and derivatives)
+
+sudo apt update
+sudo apt install build-essential dkms linux-headers-$(uname -r)
+
+for module in vboxdrv vboxnetflt vboxnetadp vboxpci; do
+  sudo modprobe "$module"
+done
+
+Fedora/RHEL/CentOS
+
+sudo dnf groupinstall "Development Tools" -y
+sudo dnf install kernel-devel-$(uname -r) dkms
+
+for module in vboxdrv vboxnetflt vboxnetadp vboxpci; do
+  sudo modprobe "$module"
+done
+
+openSUSE
+
+sudo zypper install -t pattern devel_C_C++
+sudo zypper install kernel-default-devel dkms
+
+for module in vboxdrv vboxnetflt vboxnetadp vboxpci; do
+  sudo modprobe "$module"
+done
+
+Arch Linux
+
+sudo pacman -S base-devel linux-headers dkms
+
+for module in vboxdrv vboxnetflt vboxnetadp vboxpci; do
+  sudo modprobe "$module"
+done
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+1. Ubuntu / Debian / Mint
+
+    Launch VirtualBox GUI:
+
+        From the Applications menu: search for VirtualBox
+
+        Or via terminal:
+
+    VirtualBox
+
+Make sure GUI dependencies are installed:
+
+    sudo apt update
+    sudo apt install libqt5core5a libqt5widgets5 libqt5opengl5
+
+    Install Extension Pack via GUI:
+
+    Follow the universal steps:
+
+        File → Tools → Extension Pack Manager
+
+        Click Install (+ icon)
+
+        Select the downloaded .vbox-extpack file
+
+        Accept the EULA and enter your password if prompted
+
+2. Fedora / RHEL / CentOS
+
+    Launch VirtualBox GUI:
+
+        Via desktop menu: Look for VirtualBox
+
+        Or terminal:
+
+    VirtualBox
+
+Install GUI dependencies:
+
+    sudo dnf install qt5-qtbase qt5-qtx11extras qt5-qtbase-gui
+
+    Extension Pack install:
+
+    Follow the universal GUI steps above.
+
+3. openSUSE
+
+    Launch VirtualBox GUI:
+
+        From the application launcher: search VirtualBox
+
+        Or terminal:
+
+    VirtualBox
+
+Install GUI dependencies:
+
+    sudo zypper install libqt5-qtbase libqt5-qtbase-gui libqt5-qtbase-opengl
+
+    Extension Pack install:
+
+    Follow the universal GUI steps.
+
+4. Arch Linux
+
+    Launch VirtualBox GUI:
+
+VirtualBox
+
+Install GUI dependencies:
+
+(Usually installed with VirtualBox, but if not:)
+
+    sudo pacman -S qt5-base
+
+    Extension Pack install:
+
+    Follow the universal GUI steps.
+
+
+
+
+
+
+
+
