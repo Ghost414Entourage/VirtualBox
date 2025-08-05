@@ -1,1 +1,10 @@
 apt-key list 2>/dev/null        # deprecated but still works on older systems
+
+
+
+
+
+for keyring in /etc/apt/trusted.gpg.d/*.gpg; do
+  echo "🔑 $keyring"
+  gpg --no-default-keyring --keyring "$keyring" --list-keys
+done
